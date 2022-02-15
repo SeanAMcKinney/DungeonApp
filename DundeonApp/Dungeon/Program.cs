@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using DungeonLibrary;
 using MonsterLibrary;
 
 namespace Dungeon
@@ -55,12 +56,10 @@ namespace Dungeon
                 do
                 {
                     #region MENU
-                    //ToDo possibly add more functionality to menu
 
                     Console.Write("\nPlease choose your course ahead:\n" +
                         "A) Attack\n" +
                         "R) Run Away\n" +
-                        //"U) Use Ability" + //This is just an IDEA
                         "P) Player Info\n" +
                         "M) Monster Info\n" +
                         "X) Exit\n");
@@ -76,7 +75,7 @@ namespace Dungeon
                         //Attack
                         case ConsoleKey.A:
                             //do combat
-                            Combat.DoBattle(player, monster); //ToDo create combat class and player class
+                            Combat.DoBattle(player, monster);
 
                             if (monster.Life <= 0)
                             {
@@ -103,11 +102,7 @@ namespace Dungeon
                             Console.WriteLine();
                             reload = true;
 
-                            break;
-
-                        //Possible use ability option
-                        //case ConsoleKey.U:
-                        //ToDo logic for and class for ability use
+                            break;                    
 
                         //Player Info
                         case ConsoleKey.P:
@@ -151,7 +146,7 @@ namespace Dungeon
                     #endregion
 
                     //Check if the player is dead or weakened
-                    if (player.life <= 0)//ToDo Add in player class and race selection
+                    if (player.life <= 0)
                     {
                         Console.BackgroundColor = ConsoleColor.DarkBlue;
                         Console.ForegroundColor = ConsoleColor.Red;

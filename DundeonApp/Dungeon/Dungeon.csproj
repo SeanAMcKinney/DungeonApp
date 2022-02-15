@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DungeonLibrary\DungeonLibrary.csproj">
+      <Project>{0822d567-7aa6-4eca-a1a5-0f6c8b586268}</Project>
+      <Name>DungeonLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonsterLibrary\MonsterLibrary.csproj">
       <Project>{929bda2c-57bf-421a-9e86-5f8d62af1172}</Project>
       <Name>MonsterLibrary</Name>

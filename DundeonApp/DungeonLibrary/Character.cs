@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterLibrary
+namespace DungeonLibrary
 {
     public abstract class Character
     {
@@ -82,4 +82,5 @@ namespace MonsterLibrary
         }
 
     }//end class
-}//end namespace
+
+}

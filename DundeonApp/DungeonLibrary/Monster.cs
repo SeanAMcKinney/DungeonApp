@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterLibrary
+namespace DungeonLibrary
 {
     public class Monster : Character
     {
@@ -16,7 +16,7 @@ namespace MonsterLibrary
         public int MaxDamage { get; set; }
         public string Description { get; set; }
 
-        public int MinDamgae
+        public int MinDamage
         {
             get { return _minDamage; }
             set
@@ -39,7 +39,7 @@ namespace MonsterLibrary
         }
 
         //Constructors
-        public Monster(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxdamage, string description)
+        public Monster(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description)
         //: base(name, maxLife, life, hitChance, block) //Can't use : base since there is not CONSTRUCTOR in ABSTRACT CHARACTER class 
         //from which it would be inherited.  (Technically, we never inherit constructors, but we are able to use :base(parameters) shortcut
         //for automatic assigment of any inherited properties). Since Character has no constructor it does nothing for assignment of it's 
@@ -52,7 +52,7 @@ namespace MonsterLibrary
             Name = name;
             Life = life;
             HitChance = hitChance;
-            MinDamgae = minDamage;
+            MinDamage = minDamage;
             Block = block;
         }
 
@@ -65,8 +65,8 @@ namespace MonsterLibrary
             //return base.ToString();
 
             return string.Format("\n******* MONSTER *******\n" +
-                "{0}\nLie: {1} of {2}\nDamage: {3} to {4}\n" +
-                "Block: {5}Description:\n{6}\n", Name, Life, MaxLife, MinDamgae, MaxDamage, Block, Description);
+                "{0}\nLife: {1} of {2}\nDamage: {3} to {4}\n" +
+                "Block: {5}\nDescription:\n{6}\n", Name, Life, MaxLife, MinDamage, MaxDamage, Block, Description);
         }
 
         public override int CalcDamage()
@@ -74,7 +74,7 @@ namespace MonsterLibrary
             //return base.CalcDamage();
             Random rand = new Random();
 
-            return rand.Next(MinDamgae, MaxDamage + 1);
+            return rand.Next(MinDamage, MaxDamage + 1);
         }
 
     }//end class
