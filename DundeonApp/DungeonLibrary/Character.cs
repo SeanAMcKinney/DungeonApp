@@ -81,6 +81,11 @@ namespace DungeonLibrary
             //They will have own ways to Calcutlate damage
         }
 
+        public virtual int CalcEvadeAttack()
+        {
+            return CalcEvadeAttack();
+        }
+
     }//end class
 
 }

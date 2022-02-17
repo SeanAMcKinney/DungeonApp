@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public sealed class Player : Character
+    public abstract class Player : Character
     {
         //ToDo  Need to figure out how to add in race and weapon benefits and penalties to the players methods.
 
@@ -15,6 +15,8 @@ namespace DungeonLibrary
         //Attributes: Name, HitChance, Block, Life, MaxLife, Race, Weapon
         //Only need to create fields for any attributes that require business rules
         private int _life;
+
+        private int _evade;
 
         //Properties
         //Automatic properties: A shortcut syntax that allows you to create a shortened version of a public property.
@@ -33,6 +35,8 @@ namespace DungeonLibrary
         public Race CharacterRace { get; set; }
 
         public Weapon EquippedWeapon { get; set; }
+
+        public double Evade { get; set; }
 
         ////If you need business rules, the field must be declared above and write the property the long way
         //public int Life
@@ -57,7 +61,7 @@ namespace DungeonLibrary
         //(FQCTOR)
         //ONLY MAKE A FQ-CONSTRUCTOR
         //We don't want to allow anyone to make a blank Player, so they MUST give us all of the info necessary
-        public Player(string name, int hitChance, int block, int life, int maxLife, Race characterRace, Weapon equippedWeapon)
+        public Player(string name, int hitChance, int block, int life, int maxLife, Race characterRace, Weapon equippedWeapon, double evade)
         {
             //Since Life depends on MaxLife, SET MAXLIFE FIRST
             MaxLife = maxLife;
@@ -67,6 +71,7 @@ namespace DungeonLibrary
             Life = life;
             CharacterRace = characterRace;
             EquippedWeapon = equippedWeapon;
+            Evade = evade;
         }
 
         //Methods
@@ -98,6 +103,7 @@ namespace DungeonLibrary
                 "Hit Chance: {3}%\n" +
                 "Weapon:\n{4}\n" +
                 "Block: {5}\n" +
+                "Evade: {7}\n" +
                 "Description: {6}",
                 Name,
                 Life,
@@ -106,7 +112,8 @@ namespace DungeonLibrary
                 CalcHitChance(),
                 EquippedWeapon,
                 Block,
-                description);
+                description,
+                Evade);
 
         }//end ToString()
 

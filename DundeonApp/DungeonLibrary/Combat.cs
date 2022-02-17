@@ -21,7 +21,7 @@ namespace DungeonLibrary
             int diceRoll = rand.Next(1, 101);
             Thread.Sleep(30);
 
-            if (diceRoll <= (attacker.CalcHitChance() - defender.CalcBlock()))
+            if (diceRoll <= ((attacker.CalcHitChance() * player.CalcEvadeAttack()) - defender.CalcBlock()))
             {
                 //If attacker hit, calculate the damage
                 int damageDealt = attacker.CalcDamage();

@@ -33,7 +33,7 @@ namespace MonsterLibrary
             Life = 5;
             HitChance = 15;
             Block = 10;
-            MinDamgae = 1;
+            MinDamage = 1;
             Description = "It's a ball of slime.";
             IsGooey = false;
         }
