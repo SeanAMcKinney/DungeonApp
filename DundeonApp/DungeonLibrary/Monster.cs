@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Monster : Character
+    public abstract class Monster : Character
     {
         //Fields
         private int _minDamage;
-
-
         //Properties
         public int MaxDamage { get; set; }
         public string Description { get; set; }
-
         public int MinDamage
         {
             get { return _minDamage; }
@@ -34,48 +31,37 @@ namespace DungeonLibrary
                     //Default to 1
                     _minDamage = 1;
                 }//end if/else
-
             }//end set
-        }
+        }// end MinDamage
 
-        //Constructors
-        public Monster(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description)
-        //: base(name, maxLife, life, hitChance, block) //Can't use : base since there is not CONSTRUCTOR in ABSTRACT CHARACTER class 
-        //from which it would be inherited.  (Technically, we never inherit constructors, but we are able to use :base(parameters) shortcut
-        //for automatic assigment of any inherited properties). Since Character has no constructor it does nothing for assignment of it's 
-        //properties.  When inheriting from an abstract class, we enjoy all the benefits related to fields, properties, and methods, but 
-        //must manually perform assingmnet for all properties in th constructor.
-        {
-            MaxLife = maxLife;
-            MaxDamage = MaxDamage;
-            Description = description;
-            Name = name;
-            Life = life;
-            HitChance = hitChance;
-            MinDamage = minDamage;
-            Block = block;
-        }
-
+        //Constructors    
         //Unqulified Constructor
         public Monster() { }
+        //FQCTOR
+        public Monster(int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description)
+        {
+            Life = life;
+            MaxLife = maxLife;
+            HitChance = hitChance;
+            Block = block;
+            MinDamage = minDamage;
+            MaxDamage = maxDamage;
+            Description = description;
+        }
 
         //Methods
         public override string ToString()
         {
-            //return base.ToString();
-
             return string.Format("\n******* MONSTER *******\n" +
                 "{0}\nLife: {1} of {2}\nDamage: {3} to {4}\n" +
-                "Block: {5}\nDescription:\n{6}\n", Name, Life, MaxLife, MinDamage, MaxDamage, Block, Description);
+                "Block: {5}\nHitChance: {6}%\nDescription:\n{7}\n", Name, Life, MaxLife, MinDamage, MaxDamage, Block, HitChance, Description);
         }
 
         public override int CalcDamage()
         {
-            //return base.CalcDamage();
             Random rand = new Random();
 
             return rand.Next(MinDamage, MaxDamage + 1);
         }
-
     }//end class
 }//end namespace

@@ -7,14 +7,15 @@ using DungeonLibrary;
 
 namespace PlayerLibrary
 {
-    public sealed class Palidin : Player
+    public sealed class Centaur : Player
     {
         //No New Fields
 
         //No new properties
-
+        public Weapon Axe { get; private set; }
+        
         //FQCTOR
-        public Palidin(string name, int hitChance, int block, int life, int maxLife, Race characterRace, Weapon equippedWeapon, int evade)
+        public Centaur(string name, int hitChance, int block, int life, int maxLife, Race characterRace, Weapon equippedWeapon, int evade)
         {
             MaxLife = maxLife;
             Name = name;
@@ -25,14 +26,15 @@ namespace PlayerLibrary
             EquippedWeapon = equippedWeapon;
             Evade = evade;
         }
-            //Name = "Marith of Algar";
-            //HitChance = 75;
-            //Block = 75;
-            //MaxLife = 100;
-            //Life = 100;
-            //CharacterRace = Race.HumanPalidin;
-            //equippedWeapon = Weapon.Shield; //ToDo  Add weapons to select from 
-            //Evade = 1.75;
+
+        //Name = "Brogan The Brave";
+        //HitChance = 50;
+        //Block = 50;
+        //MaxLife = 100;
+        //Life = 100;
+        //CharacterRace = Race.Centar;
+        //EquippedWeapon = Weapon.blank; //ToDo  Add weapons to select from 
+        //Evade = 1;
 
         //No added methods
 

@@ -13,6 +13,6 @@ namespace DungeonLibrary
         MountainDwarf,
         Halfling,
         HumanPalidin,
-        Centar
+        Centaur
     }//end enum
 }//end namespace

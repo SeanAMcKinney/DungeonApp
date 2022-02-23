@@ -9,17 +9,22 @@ namespace MonsterLibrary
 {
     public class Slime : Monster
     {
-        //Slime is a child/sub-class/sub-type of Monster
-
         //Fields
 
         //Properties
-        public bool IsGooey { get; set; }
+        public bool IsGooey { get; set; }    
 
         //Constructors
-        public Slime(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool isGooey)
-            : base(name, life, maxLife, hitChance, block, minDamage, maxDamage, description)
+        public Slime(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool isGooey)          
         {
+            Name = name;
+            MaxLife = maxLife;
+            Life = life;
+            HitChance = hitChance;
+            Block = block;
+            MaxDamage = maxDamage;
+            MinDamage = minDamage;
+            Description = description;
             IsGooey = isGooey;
         }
 
@@ -31,7 +36,7 @@ namespace MonsterLibrary
             MaxDamage = 2;
             Name = "Slime";
             Life = 5;
-            HitChance = 15;
+            HitChance = 40;
             Block = 10;
             MinDamage = 1;
             Description = "It's a ball of slime.";
@@ -41,19 +46,17 @@ namespace MonsterLibrary
         //Methods
         public override string ToString()
         {
-            return base.ToString() + (IsGooey ? "Gross!!" : "More solid than I expected...");
+            return base.ToString() + (IsGooey ? "More solid than I expected..." : "Gross!!");
         }
 
         public override int CalcBlock()
         {
-            //return base.CalcBlock();
-
             int calculatedBlock = Block;
 
             if (IsGooey)
             {
-                //If rabbit is fluffy it gains 50% damage reduction
-                calculatedBlock -= calculatedBlock / 2;
+               
+                calculatedBlock -= calculatedBlock * 2;
             }//end if
 
             return calculatedBlock;

@@ -15,18 +15,17 @@ namespace PlayerLibrary
         //No new properties
 
         //FQCTOR
-        public Halfling(string name, int hitChance, int block, int life, int maxLife, Race characterRace, Weapon equippedWeapon, double evade)
+        public Halfling(string name, int hitChance, int block, int life, int maxLife, Race characterRace, Weapon equippedWeapon, int evade)
         {
-            Name = "Tep of the Glade";
-            HitChance = 25;
-            Block = 25;
-            MaxLife = 100;
-            Life = 100;
-            CharacterRace = Race.Halfling;
-            EquippedWeapon = Weapon.blank; //ToDo  Add weapons to select from 
-            Evade = 1.75;
+            MaxLife = maxLife;
+            Name = name;
+            HitChance = hitChance;
+            Block = block;
+            Life = life;
+            CharacterRace = characterRace;
+            EquippedWeapon = equippedWeapon;
+            Evade = evade;
         }
-
         //No added methods
     }//end class 
 }//end namespace

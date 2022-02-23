@@ -8,11 +8,8 @@ using System.Threading;
 namespace DungeonLibrary
 {
     public class Combat
-    {
-        //This class will not have fields, properties, or custom constructors.
-        //It is a container for METHODS only.
-
-        //METHODS
+    {      
+        //METHODS - Methods only for this class
 
         public static void DoAttack(Character attacker, Character defender)
         {
@@ -21,7 +18,7 @@ namespace DungeonLibrary
             int diceRoll = rand.Next(1, 101);
             Thread.Sleep(30);
 
-            if (diceRoll <= ((attacker.CalcHitChance() * player.CalcEvadeAttack()) - defender.CalcBlock()))
+            if (diceRoll <= (attacker.CalcHitChance() - defender.CalcBlock()))
             {
                 //If attacker hit, calculate the damage
                 int damageDealt = attacker.CalcDamage();
@@ -53,5 +50,28 @@ namespace DungeonLibrary
             }
         }//end DoBattle()
 
+        public static void DoOppertunityAttack(Character attacker, Character defender)
+        {
+            //Get a random number from 1 to 100
+            Random rand = new Random();
+            int diceRoll = rand.Next(1, 101);
+            Thread.Sleep(30);
+            int damageDealt = 0;
+            if (diceRoll <= attacker.CalcHitChance() - (defender.CalcBlock() + defender.CalcEvadeAttack()))
+            {
+                damageDealt = attacker.CalcDamage() * 2;
+
+                defender.Life -= damageDealt;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("{0} hit {1} for {2} damage!", attacker.Name, defender.Name, damageDealt);
+                Console.ResetColor();
+            }                     
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("{0} missed its attack", attacker.Name);
+                Console.ResetColor();
+            }//end if
+        }//end DoOppertunityAttack()
     }//end class
 }//end namespace

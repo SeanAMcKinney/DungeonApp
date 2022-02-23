@@ -8,13 +8,14 @@ namespace DungeonLibrary
 {
     public class Weapon
     {
+    
         //Fields
         //Attributes: MinDamage, MaxDamage, Name, BonusHitChance, 2-Handed?
         private int _minDamage;
         private int _maxDamage;
         private string _name;
         private int _bonusHitChance;
-        private bool _isTwoHanded;
+        private int _bonusBlock;
 
 
         //Propererties
@@ -36,10 +37,10 @@ namespace DungeonLibrary
             set { _bonusHitChance = value; }
         }
 
-        public bool IsTwoHanded
+        public int BonusBlock
         {
-            get { return _isTwoHanded; }
-            set { _isTwoHanded = value; }
+            get { return _bonusBlock; }
+            set { _bonusBlock = value; }
         }
 
         public int MinDamage
@@ -47,51 +48,43 @@ namespace DungeonLibrary
             get { return _minDamage; }
             set
             {
-                //Shouldn't be more than the Max Damage
-                //shouldn't be less than 1
                 if (value > 0 && value <= MaxDamage)
                 {
-                    //This follows the guidelines above, go ahead and assign the field the value that was provided
                     _minDamage = value;
                 }
                 else
-                {
-                    //tried to set the value outside the appropriate ranges
-                    //Default to 1
+                {                 
                     _minDamage = 1;
                 }//end if/else
             }//end business
         }//end MinDamage
 
-        //Constructors
-        //(FQCTOR)Fully Qualified
-        public Weapon(int minDamage, int maxDamage, string name, int bonusHitChance, bool isTwoHanded)
-        {
-            //If you have ANY properties that have business rules that are based
-            //off of any OTHER properties... Set the other properties FIRST. (MaxDamage before MinDamage in this case)
-            MaxDamage = maxDamage;
-            //Since MinDamage has business rules that depend on the value of MaxDamage, we MUST set MaxDamage before MinDamage
-            MinDamage = minDamage;
-            Name = name;
-            BonusHitChance = bonusHitChance;
-            IsTwoHanded = isTwoHanded;
-        }
-
-        //UnQualified Constructor
-        //No Default Constructor! We do not want anyone to make a blank weapon with any missing info realated to the weapon.
-
         //Methods
         //Since DungeonLibrary.Weapon is NOT what we want printed to the string we must override the ToString() method.
+        //public override string ToString()
+        //{
+        //    return string.Format("{0}\t{1} to {2} Damage\n" +
+        //        "Bonus Hit: {3}%\t{4}",
+        //        Name,
+        //        MinDamage,
+        //        MaxDamage,
+        //        BonusHitChance,
+        //        BonusBlock);
+        //}
+
         public override string ToString()
         {
-            return string.Format("{0}\t{1} to {2} Damage\n" +
-                "Bonus Hit: {3}%\t{4}",
-                Name,
-                MinDamage,
-                MaxDamage,
-                BonusHitChance,
-                IsTwoHanded ? "Two-Handed" : "One-Handed");
+            return string.Format("\n******* WEAPON *******\n" +
+                "Name: {0}\n" +
+                "Minimum Damage: {1}\n" +
+                "Maximum Damage: {2}\n" +
+                "Bonus HitChance: {3}\n" +
+                "Bonus Block: {4}\n", Name, MinDamage, MaxDamage, BonusHitChance, BonusBlock);
         }
 
+        public static implicit operator Weapon(Player v)
+        {
+            throw new NotImplementedException();
+        }
     }//end class
 }//end namespace
