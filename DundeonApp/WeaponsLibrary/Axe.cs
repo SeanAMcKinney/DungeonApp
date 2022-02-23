@@ -12,10 +12,10 @@ namespace WeaponsLibrary
     {
         public Axe()
         {          
-            MaxDamage = +12;
-            MinDamage = +7;         
-            Name += "Axe";
-            BonusHitChance += 4;
+            MaxDamage = 14;
+            MinDamage = 7;         
+            Name += "Axe of Groot";
+            BonusHitChance += 6;
             BonusBlock += 4;
         }//end  Constructor
     }

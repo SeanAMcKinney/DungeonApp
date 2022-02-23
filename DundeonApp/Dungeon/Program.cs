@@ -37,22 +37,24 @@ namespace Dungeon
             Thread.Sleep(3000);
             Console.Clear();
 
-            Console.WriteLine("Now we will select your weapon and hero by way of chance...\n");
-            Console.WriteLine("First, your weapon.\n");
+            Console.WriteLine(" Now we will select your weapon and hero by way of chance...\n");
+            Console.WriteLine(" First, your weapon.\n");
             Thread.Sleep(1500);
 
             Axe axe = new Axe();
             Shield shield = new Shield();
-            Dagger dagger = new Dagger();
+            Daggers daggers = new Daggers();
             Bow bow = new Bow();
             Sting sting = new Sting();
+            SlamHammer slammer = new SlamHammer();
+            Lance lance = new Lance();
 
-            Weapon[] weapons = { axe, shield, bow, dagger, sting };
+            Weapon[] weapons = { axe, shield, bow, daggers, sting, slammer,  lance };
             Random rand = new Random();
             int randomNumber = rand.Next(weapons.Length);
             Weapon equippedWeapon = weapons[randomNumber];
-            Print("Your weapon is " + equippedWeapon.Name + ". Enjoy!", 60);
-            Thread.Sleep(3000);
+            Print(" Your weapon is " + equippedWeapon.Name + ". Enjoy!", 60);
+            Thread.Sleep(5000);
             Console.Clear();
           
             //Player needs to select a Race:  Race to have relavent sat bonuses and penalties
@@ -71,7 +73,7 @@ namespace Dungeon
             int rand2Number = rand2.Next(players.Length);
             Player player = players[rand2Number];
             Console.WriteLine(" Your hero is " + player.Name + ".");
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             Console.Clear();
 
             Print(" Adventure forth!", 60);
@@ -96,14 +98,14 @@ namespace Dungeon
                 Slime s2 = new Slime("Solid Slime", 15, 15, 50, 30, 3, 5, "Not very Jiggly!", true);
                 Goblin g1 = new Goblin();
                 WizardOrc wO1 = new WizardOrc();
-                WizardOrc wO2 = new WizardOrc("Fley'ot the Un-mutable", 20, 20, 35, 25, 8, 20, "Un-natural mystic power... a fiend!", true);
+                WizardOrc wO2 = new WizardOrc("Fley'ot the Un-mutable", 20, 20, 50, 25, 8, 20, "Un-natural mystic power... a fiend!", true);
                 Kraken k1 = new Kraken();
                 Kraken k2 = new Kraken("Leviathan", 35, 35, 65, 40, 5, 30, "Oceanic Catastrophe!", true);
                 Imp i1 = new Imp("Waskle the Weenis", 6, 6, 45, 20, 1, 3, "My friends call me Weenis");
                 Imp i2 = new Imp();
                 BlackDragon bD1 = new BlackDragon();
 
-                Monster[] monsters = { s1, s1, s2, g1, g1, wO1, wO1, wO2, k1, k2, i1, i2, i2, bD1 };
+                Monster[] monsters = { s1, s1, s1, s2, s2, g1, g1, g1, wO1, wO1, wO1, wO2, k1, k2, i1, i2, i2, i2, bD1 };
 
                 //Second do/while loop
                 bool reload = false; //counter for second do/while loop
@@ -113,13 +115,13 @@ namespace Dungeon
                 int randomNumber3 = rand3.Next(monsters.Length);
                 Monster monster = monsters[randomNumber3];
 
-                Print("\nInside of this room you find a " + monster.Name, 40);
+                Print("\n Inside of this room you find a " + monster.Name, 40);
                  
                 do
                 {
                     #region MENU
 
-                    Console.Write("\nPlease choose your course ahead:\n" +
+                    Console.Write("\n Please choose your course ahead:\n" +
                         "A) Attack\n" +
                         "R) Run Away\n" +
                         "P) Player Info\n" +
@@ -157,7 +159,7 @@ namespace Dungeon
                         //Run Away
                         case ConsoleKey.R:
                         
-                            Console.WriteLine("You run away!");
+                            Console.WriteLine(" You run away!");
 
                             //Monster gets an attack either way (success in running or not)
                             Print($"{monster.Name} attacks you as you flee!", 40);
@@ -174,9 +176,9 @@ namespace Dungeon
                         case ConsoleKey.P:
 
                             //Need to display player's info/stats
-                            Console.WriteLine("Player Info");
+                            Console.WriteLine(" Player Info");
                             Console.WriteLine(player);
-                            Console.WriteLine("Rooms Escaped : " + roomsEscaped);
+                            Console.WriteLine(" Rooms Escaped : " + roomsEscaped);
 
                             break;
 
@@ -185,7 +187,7 @@ namespace Dungeon
                         case ConsoleKey.M:
 
                             //Display Monster's Info/stats
-                            Console.WriteLine("Monster Info");
+                            Console.WriteLine(" Monster Info");
                             Console.WriteLine(monster);
 
                             break;
@@ -195,7 +197,7 @@ namespace Dungeon
                         case ConsoleKey.W:
 
                             //Display Weapon Stats/ Info
-                            Console.WriteLine("Weapon Info");
+                            Console.WriteLine(" Weapon Info");
                             Console.WriteLine(equippedWeapon);
 
                             break;
@@ -207,7 +209,7 @@ namespace Dungeon
 
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.BackgroundColor = ConsoleColor.Yellow;
-                            Print("You are a yellow bellied coward....", 10);
+                            Print(" You are a yellow bellied coward....", 10);
                             Console.ResetColor();
 
                             exit = true; //updates exit to leave game
@@ -216,7 +218,7 @@ namespace Dungeon
 
                         default:
 
-                            Console.WriteLine("Are you daft!? Thouset choice is not an option! Plese triest again.");
+                            Console.WriteLine(" Are you daft!? Thouset choice is not an option! Plese triest again.");
 
                             break;
                     }
@@ -242,7 +244,7 @@ namespace Dungeon
 
             //Give the players score
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("You survived " + roomsEscaped + " room" + ((roomsEscaped == 1) ? "." : "s"));
+            Console.WriteLine(" You survived " + roomsEscaped + " room" + ((roomsEscaped == 1) ? "." : "s"));
             Console.ResetColor();
 
         }//end Main

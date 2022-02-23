@@ -13,12 +13,12 @@ namespace WeaponsLibrary
     {
         public Shield()
         {          
-            MaxDamage += 14;
+            MaxDamage = 10;
             //Since MinDamage has business rules that depend on the value of MaxDamage, we MUST set MaxDamage before MinDamage
-            MinDamage += 8;
+            MinDamage = 5;
             Name = "Shield";
-            BonusHitChance += 2;
-            BonusBlock += 10;
+            BonusHitChance = 5;
+            BonusBlock = 12;
 
         }//end Constructor
     }//end class

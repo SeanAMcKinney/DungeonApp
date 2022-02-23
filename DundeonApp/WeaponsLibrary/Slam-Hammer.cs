@@ -8,15 +8,15 @@ using DungeonLibrary;
 
 namespace WeaponsLibrary
 {
-    public class Bow : Weapon
+    public class SlamHammer : Weapon
     {
-        public Bow()
+        public SlamHammer()
         {
-            MaxDamage += 15;           
-            MinDamage += 2;
-            Name = "Bow of Ages";
-            BonusHitChance += 5;
-            BonusBlock += 2;
+            MaxDamage = 18;           
+            MinDamage = 2;
+            Name = "Slam-Hammer";
+            BonusHitChance = 6;
+            BonusBlock = 1;
 
         }//end FQ Constructor   
     }

@@ -8,17 +8,17 @@ using DungeonLibrary;
 
 namespace WeaponsLibrary
 {
-    public class Dagger : Weapon
+    public class Daggers : Weapon
     {
-        public Dagger()
+        public Daggers()
         {
 
-            MaxDamage += 9;
+            MaxDamage = 9 * 2;
             //Since MinDamage has business rules that depend on the value of MaxDamage, we MUST set MaxDamage before MinDamage
-            MinDamage += 4;
-            Name = "Dagger";
-            BonusHitChance += 2;
-            BonusBlock += 0;
+            MinDamage = 4 * 2;
+            Name = "Daggers";
+            BonusHitChance = 2;
+            BonusBlock = 0;
 
         }//end FQ Constructor
     }//end class

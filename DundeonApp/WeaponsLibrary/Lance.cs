@@ -8,15 +8,15 @@ using DungeonLibrary;
 
 namespace WeaponsLibrary
 {
-    public class Bow : Weapon
+    public class Lance : Weapon
     {
-        public Bow()
+        public Lance()
         {
-            MaxDamage += 15;           
-            MinDamage += 2;
-            Name = "Bow of Ages";
-            BonusHitChance += 5;
-            BonusBlock += 2;
+            MaxDamage += 13;           
+            MinDamage += 7;
+            Name = "Lance-o-lot";
+            BonusHitChance += 9;
+            BonusBlock += 1;
 
         }//end FQ Constructor   
     }
