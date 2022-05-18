@@ -218,7 +218,7 @@ namespace Dungeon
 
                         default:
 
-                            Console.WriteLine(" Are you daft!? Thouset choice is not an option! Plese triest again.");
+                            Console.WriteLine(" Are you daft!? Thouset choice is not an option! Please triest again.");
 
                             break;
                     }
