@@ -30,7 +30,9 @@ namespace Dungeon
 
         public static void GivePlayerScore()
         {
-            
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(" You survived " + Player.Score + " room" + ((Player.Score == 1) ? "." : "s"));
+            Console.ResetColor();          
         }
     }//end class
 }//end namespace

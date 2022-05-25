@@ -5,14 +5,12 @@ namespace Dungeon
     class Program
     {
         static void Main(string[] args)
-        {
-            int roomsEscaped = 0; //score counter
+        {         
             GameText.GameTitleAndOpeningMessage();
-            WeaponAndPlayerAutoSelect.WeaponAndPlayerSelection();
-            RoomGetAndGameOptionsLoops.RunRoomAndGameoptions();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" You survived " + roomsEscaped + " room" + ((roomsEscaped == 1) ? "." : "s"));
-            Console.ResetColor();
+            DungeonLibrary.Weapon equippedWeapon = WeaponAutoSelect.WeaponSelection();
+            DungeonLibrary.Player player = PlayerAutoSelection.PlayerSelection(equippedWeapon);
+            RoomGetAndGameOptionsLoops.RunRoomAndGameoptions(equippedWeapon, player);
+            GameText.GivePlayerScore();
         }//end Main
     }//end class
 }//end namespace

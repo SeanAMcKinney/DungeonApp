@@ -1,20 +1,16 @@
 ﻿using DungeonLibrary;
 using MonsterLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Dungeon
 {
     public class RoomGetAndGameOptionsLoops
     {
-        public static void RunRoomAndGameoptions()
+        public static void RunRoomAndGameoptions(Weapon equippedWeapon, Player player)
         {
             bool exit = false; //counter for Do/While loop
-            int roomsEscaped = 0; //score counter
+            Player.Score = 0;//score counter           
             do
             {
                 //Get Room
@@ -61,8 +57,6 @@ namespace Dungeon
 
                     Console.Clear();
 
-
-                    bool equippedWeapon = true;
                     // Switch for Choices
                     switch (userChoice)
                     {
@@ -80,7 +74,7 @@ namespace Dungeon
                                 Thread.Sleep(2000);
                                 Console.Clear();
                                 reload = true; // gets us a new room
-                                roomsEscaped++;
+                                Player.Score++;
                             }//end if
 
                             break; //end case A
@@ -97,7 +91,7 @@ namespace Dungeon
                             Thread.Sleep(2000);
                             Console.Clear();
                             reload = true;
-                            roomsEscaped++;
+                            Player.Score++;
 
                             break;
 
@@ -107,7 +101,7 @@ namespace Dungeon
                             //Need to display player's info/stats
                             Console.WriteLine(" Player Info");
                             Console.WriteLine(player);
-                            Console.WriteLine(" Rooms Escaped : " + roomsEscaped);
+                            Console.WriteLine(" Rooms Escaped : " + Player.Score);
 
                             break;
 

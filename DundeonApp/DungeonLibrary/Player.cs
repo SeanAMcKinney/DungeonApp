@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace DungeonLibrary
 {
     public class Player : Character
-    {     
+    {
+
         //Properties
         public Race CharacterRace { get; set; }
         public Weapon EquippedWeapon { get; set; }
-
+        public static int Score { get; set; } 
         //Methods
         public override string ToString()
         {
