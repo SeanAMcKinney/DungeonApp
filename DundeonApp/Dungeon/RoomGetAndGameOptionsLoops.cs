@@ -34,9 +34,7 @@ namespace Dungeon
                 bool reload = false; //counter for second do/while loop
 
                 //Select random monster for combat in room selected above
-                Random rand3 = new Random();
-                int randomNumber3 = rand3.Next(monsters.Length);
-                Monster monster = monsters[randomNumber3];
+                Monster monster =  RandomMonsterSelection.SelectedMonster(monsters);
 
                 PrintUtility.Print("\n Inside of this room you find a " + monster.Name, 40);
 
