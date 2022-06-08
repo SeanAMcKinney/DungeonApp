@@ -42,17 +42,17 @@ namespace Dungeon
                 {
                     #region MENU
 
-                    Console.Write("\n Please choose your course ahead:\n" +
-                        "A) Attack\n" +
-                        "R) Run Away\n" +
-                        "P) Player Info\n" +
-                        "W) Weapon Info\n" +
-                        "M) Monster Info\n" +
-                        "X) Exit\n");
+                    //Console.Write("\n Please choose your course ahead:\n" +
+                    //    "A) Attack\n" +
+                    //    "R) Run Away\n" +
+                    //    "P) Player Info\n" +
+                    //    "W) Weapon Info\n" +
+                    //    "M) Monster Info\n" +
+                    //    "X) Exit\n");
 
-                    ConsoleKey userChoice = Console.ReadKey(true).Key;
-                    //Executes user input without hitting enter
-
+                    //ConsoleKey userChoice = Console.ReadKey(true).Key;
+                    ////Executes user input without hitting enter
+                    ConsoleKey userChoice = InGameMenu.RunInGameMenu();
                     Console.Clear();
 
                     // Switch for Choices

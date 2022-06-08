@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameText.cs" />
+    <Compile Include="InGameMenu.cs" />
     <Compile Include="PlayerAutoSelection.cs" />
     <Compile Include="PrintUtility.cs" />
     <Compile Include="Program.cs" />
