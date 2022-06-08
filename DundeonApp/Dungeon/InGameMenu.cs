@@ -20,8 +20,6 @@ namespace Dungeon
 
             ConsoleKey userChoice = Console.ReadKey(true).Key;
             return userChoice;
-           
-            //Executes user input without hitting enter
         }
     }
 }

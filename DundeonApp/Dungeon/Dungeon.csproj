@@ -52,6 +52,7 @@
     <Compile Include="RandomMonsterSelection.cs" />
     <Compile Include="RoomCreation.cs" />
     <Compile Include="RoomGetAndGameOptionsLoops.cs" />
+    <Compile Include="SwitchCaseMethods.cs" />
     <Compile Include="WeaponAutoSelect.cs" />
   </ItemGroup>
   <ItemGroup>

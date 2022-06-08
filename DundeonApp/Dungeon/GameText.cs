@@ -34,5 +34,15 @@ namespace Dungeon
             Console.WriteLine(" You survived " + Player.Score + " room" + ((Player.Score == 1) ? "." : "s"));
             Console.ResetColor();          
         }
+
+        public static void AreYouDead()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Red;
+            PrintUtility.Print(" YOUR FIGHT IS OVER!", 100);
+            PrintUtility.Print(" YOU... ARE.. DEAD!");
+            Console.ResetColor();
+            Thread.Sleep(3000);
+        }
     }//end class
 }//end namespace
