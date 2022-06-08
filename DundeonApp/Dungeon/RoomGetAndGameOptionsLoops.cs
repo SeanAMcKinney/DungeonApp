@@ -1,7 +1,6 @@
 ﻿using DungeonLibrary;
 using MonsterLibrary;
 using System;
-using System.Threading;
 
 namespace Dungeon
 {
