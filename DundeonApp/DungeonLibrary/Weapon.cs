@@ -59,19 +59,6 @@ namespace DungeonLibrary
             }//end business
         }//end MinDamage
 
-        //Methods
-        //Since DungeonLibrary.Weapon is NOT what we want printed to the string we must override the ToString() method.
-        //public override string ToString()
-        //{
-        //    return string.Format("{0}\t{1} to {2} Damage\n" +
-        //        "Bonus Hit: {3}%\t{4}",
-        //        Name,
-        //        MinDamage,
-        //        MaxDamage,
-        //        BonusHitChance,
-        //        BonusBlock);
-        //}
-
         public override string ToString()
         {
             return string.Format("\n******* WEAPON *******\n" +
