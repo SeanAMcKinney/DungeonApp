@@ -9,8 +9,6 @@ namespace MonsterLibrary
 {
     public class Slime : Monster
     {
-        //Fields
-
         //Properties
         public bool IsGooey { get; set; }    
 
@@ -54,8 +52,7 @@ namespace MonsterLibrary
             int calculatedBlock = Block;
 
             if (IsGooey)
-            {
-               
+            {              
                 calculatedBlock -= calculatedBlock * 2;
             }//end if
 

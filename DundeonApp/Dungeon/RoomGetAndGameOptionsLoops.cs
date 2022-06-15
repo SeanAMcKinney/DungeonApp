@@ -26,7 +26,6 @@ namespace Dungeon
                 BlackDragon bD1 = new BlackDragon();
 
                 Monster[] monsters = { s1, s1, s1, s2, s2, g1, g1, g1, wO1, wO1, wO1, wO2, k1, k2, i1, i2, i2, i2, bD1 };
-
                 Monster monster = RandomMonsterSelection.SelectedMonster(monsters);
 
                 PrintUtility.Print("\n Inside of this room you find a " + monster.Name, 40);
