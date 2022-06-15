@@ -23,9 +23,10 @@ namespace Dungeon
                 Kraken k2 = new Kraken("Leviathan", 35, 35, 65, 40, 5, 30, "Oceanic Catastrophe!", true);
                 Imp i1 = new Imp("Waskle the Weenis", 6, 6, 45, 20, 1, 3, "My friends call me Weenis");
                 Imp i2 = new Imp();
+                Imp i3 = new Imp("Billy Bads", 8, 8, 48, 22, 4, 8, "Who's bad? I'm baaaaaad!");
                 BlackDragon bD1 = new BlackDragon();
 
-                Monster[] monsters = { s1, s1, s1, s2, s2, g1, g1, g1, wO1, wO1, wO1, wO2, k1, k2, i1, i2, i2, i2, bD1 };
+                Monster[] monsters = { s1, s1, s1, s2, s2, g1, g1, g1, wO1, wO1, wO1, wO2, k1, k2, i1, i2, i2, i2, i3, bD1 };
                 Monster monster = RandomMonsterSelection.SelectedMonster(monsters);
 
                 PrintUtility.Print("\n Inside of this room you find a " + monster.Name, 40);
