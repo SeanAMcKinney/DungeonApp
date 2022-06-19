@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App.cs" />
     <Compile Include="InGameMenu.cs" />
     <Compile Include="MonsterManager.cs" />
     <Compile Include="PlayerAutoSelection.cs" />

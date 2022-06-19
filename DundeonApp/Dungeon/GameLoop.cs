@@ -5,7 +5,7 @@ namespace Dungeon
 {
     public interface IGameLoop
     {
-        void RunRoomAndGameoptions();
+        void RunGame();
     }
 
     public class GameLoop : IGameLoop
@@ -25,14 +25,14 @@ namespace Dungeon
             _monsterManager = monsterManager;
         }
 
-        public void RunRoomAndGameoptions()
+        public void RunGame()
         {
             _ui.BeginGame();
             Weapon equippedWeapon = _weaponAutoSelect.WeaponSelection();
             Player player = _playerAutoSelection.PlayerSelection(equippedWeapon);
 
-            bool exit = false; //counter for Do/While loop
-            Player.Score = 0;//score counter           
+            bool exit = false;
+            Player.Score = 0;          
             do
             {
                 _consoleUtilities.PrintChar(RoomCreation.GetRoom(), 10);
@@ -41,15 +41,14 @@ namespace Dungeon
 
                 _consoleUtilities.PrintChar("\n Inside of this room you find a " + monster.Name, 40);
 
-                bool reload = false; //counter for second do/while loop
+                bool reload = false;
                 do
-                {
-                    #region MENU
+                {               
                     ConsoleKey userChoice = InGameMenu.RunInGameMenu();
                     Console.Clear();
                     switch (userChoice)
                     {
-                        case ConsoleKey.A:  //do combat
+                        case ConsoleKey.A:
                             Combat.DoBattle(player, monster);
                             if (monster.Life <= 0)
                             {                             
@@ -59,25 +58,25 @@ namespace Dungeon
                             }
                             break;
                        
-                        case ConsoleKey.R: //Run Away                         
+                        case ConsoleKey.R:                        
                             _ui.RunAway(monster, player);
                             reload = true;
                             Player.Score++;
                             break;
                        
-                        case ConsoleKey.P: //Player Info
+                        case ConsoleKey.P:
                             _ui.PlayerInfo(player);
                             break;
                       
-                        case ConsoleKey.M: //Monster Info
+                        case ConsoleKey.M:
                             _ui.MonsterInfo(monster);
                             break;
 
-                        case ConsoleKey.W: //Weapon Info
+                        case ConsoleKey.W:
                             _ui.WeaponInfo(equippedWeapon);
                             break;
                       
-                        case ConsoleKey.X: //Exit
+                        case ConsoleKey.X:
                         case ConsoleKey.E:
                             _ui.ExitGame();
                             exit = true; //updates exit to leave game
@@ -86,9 +85,8 @@ namespace Dungeon
                         default:
                             Console.WriteLine(" Are you daft!? Thouset choice is not an option! Please triest again.");
                             break;
-                    }
-                    #endregion                
-                    if (player.Life <= 0) //Check if the player is dead or weakened
+                    }              
+                    if (player.Life <= 0)
                     {
                         _ui.AreYouDead();
                         exit = true;

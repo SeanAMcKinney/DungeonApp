@@ -8,8 +8,8 @@ namespace Dungeon
         {
             try
             {
-                GameLoop gameLoop = new GameLoop(new UserInterface(new ConsoleUtilities()), new ConsoleUtilities(), new PlayerAutoSelection(new ConsoleUtilities()), new WeaponAutoSelect(new ConsoleUtilities()), new MonsterManager());
-                gameLoop.RunRoomAndGameoptions();
+                var app = new App(new GameLoop(new UserInterface(new ConsoleUtilities()), new ConsoleUtilities(), new PlayerAutoSelection(new ConsoleUtilities()), new WeaponAutoSelect(new ConsoleUtilities()), new MonsterManager()));
+                app.Execute();
             }
             catch (Exception ex)
             {
