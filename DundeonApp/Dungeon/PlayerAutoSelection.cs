@@ -1,16 +1,23 @@
 ﻿using DungeonLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Dungeon
 {
-    class PlayerAutoSelection
+    public interface IPlayerAutoSelection
     {
-        public static Player PlayerSelection(Weapon equippedWeapon)
+        Player PlayerSelection(Weapon equippedWeapon);
+    }
+
+    public class PlayerAutoSelection : IPlayerAutoSelection
+    {
+        private readonly IConsoleUtilities _consoleUtilities;
+        public PlayerAutoSelection(IConsoleUtilities consoleUtilities)
+        {
+            _consoleUtilities = consoleUtilities;
+        }
+
+        public Player PlayerSelection(Weapon equippedWeapon)
         {
             Console.WriteLine(" Now we will select your hero.");
             Thread.Sleep(1500);
@@ -29,10 +36,10 @@ namespace Dungeon
             Thread.Sleep(5000);
             Console.Clear();
 
-            PrintUtility.Print(" Adventure forth!", 60);
+            _consoleUtilities.PrintChar(" Adventure forth!", 60);
             Thread.Sleep(1500);
             Console.ForegroundColor = ConsoleColor.Blue;
-            PrintUtility.Print(" JUST DON'T DIE...");
+            _consoleUtilities.PrintChar(" JUST DON'T DIE...", 30);
             Console.ResetColor();
             Thread.Sleep(3000);
             Console.Clear();

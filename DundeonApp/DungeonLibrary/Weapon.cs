@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
     public class Weapon
-    {
-    
+    { 
         //Fields
         //Attributes: MinDamage, MaxDamage, Name, BonusHitChance, 2-Handed?
         private int _minDamage;

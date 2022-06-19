@@ -5,12 +5,17 @@ namespace Dungeon
     class Program
     {
         static void Main(string[] args)
-        {         
-            GameText.GameTitleAndOpeningMessage();
-            DungeonLibrary.Weapon equippedWeapon = WeaponAutoSelect.WeaponSelection();
-            DungeonLibrary.Player player = PlayerAutoSelection.PlayerSelection(equippedWeapon);
-            RoomGetAndGameOptionsLoops.RunRoomAndGameoptions(equippedWeapon, player);
-            GameText.GivePlayerScore();
-        }//end Main
-    }//end class
-}//end namespace
+        {
+            try
+            {
+                GameLoop gameLoop = new GameLoop(new UserInterface(new ConsoleUtilities()), new ConsoleUtilities(), new PlayerAutoSelection(new ConsoleUtilities()), new WeaponAutoSelect(new ConsoleUtilities()), new MonsterManager());
+                gameLoop.RunRoomAndGameoptions();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
+    }
+}

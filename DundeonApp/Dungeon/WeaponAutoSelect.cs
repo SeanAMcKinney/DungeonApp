@@ -9,9 +9,19 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
-    public class WeaponAutoSelect
+    public interface IWeaponAutoSelect
     {
-        public static Weapon WeaponSelection()
+        Weapon WeaponSelection();
+    }
+
+    public class WeaponAutoSelect : IWeaponAutoSelect
+    {
+        private readonly IConsoleUtilities _consoleUtilities;
+        public WeaponAutoSelect(IConsoleUtilities consoleUtilities)
+        {
+            _consoleUtilities = consoleUtilities;
+        }
+        public Weapon WeaponSelection()
         {
             Console.WriteLine(" Now we will select your weapon and hero by way of chance...\n");
             Console.WriteLine(" First, your weapon.\n");
@@ -29,12 +39,12 @@ namespace Dungeon
             Random rand = new Random();
             int randomNumber = rand.Next(weapons.Length);
             DungeonLibrary.Weapon equippedWeapon = weapons[randomNumber];
-            PrintUtility.Print(" Your weapon is " + equippedWeapon.Name + ". Enjoy!", 60);
+            _consoleUtilities.PrintChar(" Your weapon is " + equippedWeapon.Name + ". Enjoy!", 60);
             Thread.Sleep(5000);
             Console.Clear();
 
             return equippedWeapon;
 
-        }       
+        }
     }
 }
