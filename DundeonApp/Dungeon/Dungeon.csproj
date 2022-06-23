@@ -43,16 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameText.cs" />
+    <Compile Include="App.cs" />
     <Compile Include="InGameMenu.cs" />
+    <Compile Include="MonsterManager.cs" />
     <Compile Include="PlayerAutoSelection.cs" />
-    <Compile Include="PrintUtility.cs" />
+    <Compile Include="ConsoleUtilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomMonsterSelection.cs" />
     <Compile Include="RoomCreation.cs" />
-    <Compile Include="RoomGetAndGameOptionsLoops.cs" />
-    <Compile Include="SwitchCaseMethods.cs" />
+    <Compile Include="GameLoop.cs" />
+    <Compile Include="UserInterface.cs" />
     <Compile Include="WeaponAutoSelect.cs" />
   </ItemGroup>
   <ItemGroup>

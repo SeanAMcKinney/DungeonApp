@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DungeonLibrary;
+﻿using DungeonLibrary;
 
 namespace MonsterLibrary
 {
     public class Slime : Monster
     {
-        //Properties
-        public bool IsGooey { get; set; }    
+        public bool IsGooey { get; set; }
 
-        //Constructors
-        public Slime(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool isGooey)          
+        public Slime(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool isGooey)
         {
             Name = name;
             MaxLife = maxLife;
@@ -26,10 +19,8 @@ namespace MonsterLibrary
             IsGooey = isGooey;
         }
 
-        //Unqulified Constructor
         public Slime()
         {
-            //SET MAX VALUES FIRST
             MaxLife = 5;
             MaxDamage = 2;
             Name = "Slime";
@@ -41,7 +32,6 @@ namespace MonsterLibrary
             IsGooey = false;
         }
 
-        //Methods
         public override string ToString()
         {
             return base.ToString() + (IsGooey ? "More solid than I expected..." : "Gross!!");
@@ -52,13 +42,10 @@ namespace MonsterLibrary
             int calculatedBlock = Block;
 
             if (IsGooey)
-            {              
+            {
                 calculatedBlock -= calculatedBlock * 2;
-            }//end if
-
+            }
             return calculatedBlock;
         }
-
-
-    }//end class
-}//end namespace
+    }
+}

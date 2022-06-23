@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DungeonLibrary;
 
 namespace MonsterLibrary
 {
     public class Kraken : Monster
     {
-        //Fields
-
-        //Propeties
-
         public bool InDeepWater { get; set; }
-
-        //FQCTOR
 
         public Kraken(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool inDeepWater)
         {
@@ -29,7 +19,7 @@ namespace MonsterLibrary
             Description = description;
             InDeepWater = inDeepWater;
         }
-        //Unqualified Constructor
+        
         public Kraken()
         {
             MaxLife = 35;
@@ -42,8 +32,6 @@ namespace MonsterLibrary
             Description = "Tentacled Beast of Legand!!";
             InDeepWater = false;
         }
-
-        //Methods
 
         public override string ToString()
         {
@@ -62,9 +50,7 @@ namespace MonsterLibrary
             else
             {
                 return rand.Next(MinDamage, MaxDamage + 1);
-            }//end if/else
-        }//end CalcDamage()
-
-
-    }//end class
-}//end Namespace
+            }
+        }
+    }
+}

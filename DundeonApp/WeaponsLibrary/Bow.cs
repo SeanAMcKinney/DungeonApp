@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DungeonLibrary;
+﻿using DungeonLibrary;
 
 namespace WeaponsLibrary
 {
@@ -17,7 +11,6 @@ namespace WeaponsLibrary
             Name = "Bow of Ages";
             BonusHitChance += 5;
             BonusBlock += 2;
-
-        }//end FQ Constructor   
+        }  
     }
 }

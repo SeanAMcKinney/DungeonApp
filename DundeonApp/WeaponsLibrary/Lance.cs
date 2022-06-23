@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DungeonLibrary;
+﻿using DungeonLibrary;
 
 namespace WeaponsLibrary
 {
@@ -17,7 +11,6 @@ namespace WeaponsLibrary
             Name = "Lance-o-lot";
             BonusHitChance += 9;
             BonusBlock += 1;
-
-        }//end FQ Constructor   
+        }
     }
 }
