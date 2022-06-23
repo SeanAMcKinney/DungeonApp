@@ -4,40 +4,12 @@ namespace DungeonLibrary
 {
     public class Weapon
     { 
-        //Fields
-        //Attributes: MinDamage, MaxDamage, Name, BonusHitChance, 2-Handed?
         private int _minDamage;
-        private int _maxDamage;
-        private string _name;
-        private int _bonusHitChance;
-        private int _bonusBlock;
 
-
-        //Propererties
-        public int MaxDamage
-        {
-            get { return _maxDamage; }
-            set { _maxDamage = value; }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-        public int BonusHitChance
-        {
-            get { return _bonusHitChance; }
-            set { _bonusHitChance = value; }
-        }
-
-        public int BonusBlock
-        {
-            get { return _bonusBlock; }
-            set { _bonusBlock = value; }
-        }
-
+        public int MaxDamage { get; set; }
+        public string Name { get; set; }
+        public int BonusHitChance { get; set; }
+        public int BonusBlock { get; set; }
         public int MinDamage
         {
             get { return _minDamage; }
@@ -50,9 +22,9 @@ namespace DungeonLibrary
                 else
                 {                 
                     _minDamage = 1;
-                }//end if/else
-            }//end business
-        }//end MinDamage
+                }
+            }
+        }
 
         public override string ToString()
         {
@@ -68,5 +40,5 @@ namespace DungeonLibrary
         {
             throw new NotImplementedException();
         }
-    }//end class
-}//end namespace
+    }
+}

@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DungeonLibrary;
 
 namespace MonsterLibrary
 {
     public class WizardOrc : Monster
     {
-        //Fields
-
-        //Properties
         public bool IsMaster { get; set; }
-
-        //Constructors
 
         public WizardOrc(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool isMaster)
         {
@@ -28,7 +19,7 @@ namespace MonsterLibrary
             Description = description;
             IsMaster = isMaster;
         }
-        //Unqualified Constructor
+        
         public WizardOrc()
         {
             MaxLife = 16;
@@ -41,8 +32,6 @@ namespace MonsterLibrary
             Description = "A dark magic wielding Orc.";
             IsMaster = false;
         }
-
-        //Methods
 
         public override string ToString()
         {
@@ -59,8 +48,7 @@ namespace MonsterLibrary
             else
             {
             return rand.Next(MinDamage, MaxDamage + 1);
-            }//end if/else
-        }//end CalcDamage()
-
-    }//end class
-}//end Namespace
+            }
+        }
+    }
+}

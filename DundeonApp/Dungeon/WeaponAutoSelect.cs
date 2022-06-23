@@ -1,10 +1,6 @@
 ﻿using DungeonLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 
 namespace Dungeon
@@ -35,10 +31,10 @@ namespace Dungeon
             WeaponsLibrary.SlamHammer slammer = new WeaponsLibrary.SlamHammer();
             WeaponsLibrary.Lance lance = new WeaponsLibrary.Lance();
 
-            DungeonLibrary.Weapon[] weapons = { axe, shield, bow, daggers, sting, slammer, lance };
+            Weapon[] weapons = { axe, shield, bow, daggers, sting, slammer, lance };
             Random rand = new Random();
             int randomNumber = rand.Next(weapons.Length);
-            DungeonLibrary.Weapon equippedWeapon = weapons[randomNumber];
+            Weapon equippedWeapon = weapons[randomNumber];
             _consoleUtilities.PrintChar(" Your weapon is " + equippedWeapon.Name + ". Enjoy!", 60);
             Thread.Sleep(5000);
             Console.Clear();

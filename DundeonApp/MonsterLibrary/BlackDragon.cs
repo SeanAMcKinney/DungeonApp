@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DungeonLibrary;
+﻿using DungeonLibrary;
 
 namespace MonsterLibrary
 {
     public class BlackDragon : Monster
     {
-        //Fields
-
         public BlackDragon(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description)
         {
             Name = name;
@@ -22,7 +15,7 @@ namespace MonsterLibrary
             MinDamage = minDamage;
             Description = description;
         }
-        //Unqualified Constructor
+        
         public BlackDragon()
         {
             MaxLife = 38;
@@ -34,9 +27,5 @@ namespace MonsterLibrary
             MinDamage = 8;
             Description = "Strong... Fast... Deadly";        
         }
-
-        //Methods
-       
-
-    }//end class
-}//end Namespace
+    }
+}

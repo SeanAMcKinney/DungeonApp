@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
     public class Player : Character
     {
-
-        //Properties
         public Race CharacterRace { get; set; }
         public Weapon EquippedWeapon { get; set; }
         public static int Score { get; set; } 
-        //Methods
+        
         public override string ToString()
         {
             string description = "";
@@ -35,7 +29,7 @@ namespace DungeonLibrary
                 case Race.Centaur:
                     description = "Fast Fighter Horse-man";
                     break;
-            }//end switch
+            }
 
             return string.Format("-=-= {0} =-=-\n" +
                 "Life: {1} of {2}\n" +
@@ -50,8 +44,7 @@ namespace DungeonLibrary
                 Block,
                 description,
                 Evade);
-
-        }//end ToString()
+        }
 
         public override int CalcDamage()
         {         
@@ -64,5 +57,5 @@ namespace DungeonLibrary
         {
             return base.CalcHitChance() + EquippedWeapon.BonusHitChance;
         }
-    }//end class
-}//end Namespace
+    }
+}

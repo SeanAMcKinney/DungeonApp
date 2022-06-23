@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DungeonLibrary;
+﻿using DungeonLibrary;
 
 namespace WeaponsLibrary
 {
@@ -12,13 +6,11 @@ namespace WeaponsLibrary
     {
         public Sting()
         {
-            MaxDamage = 12;
-            //Since MinDamage has business rules that depend on the value of MaxDamage, we MUST set MaxDamage before MinDamage
+            MaxDamage = 12;e
             MinDamage = 7;
             Name = "Sting";
             BonusHitChance = 4;
             BonusBlock = 8 ;
-
-        }//end  Constructor
-    }//end class
-}//end namespace
+        }
+    }
+}
