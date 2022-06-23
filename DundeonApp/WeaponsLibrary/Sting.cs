@@ -6,7 +6,7 @@ namespace WeaponsLibrary
     {
         public Sting()
         {
-            MaxDamage = 12;e
+            MaxDamage = 12;
             MinDamage = 7;
             Name = "Sting";
             BonusHitChance = 4;
