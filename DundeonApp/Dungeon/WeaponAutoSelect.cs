@@ -2,7 +2,6 @@
 using System;
 using System.Threading;
 
-
 namespace Dungeon
 {
     public interface IWeaponAutoSelect
@@ -40,7 +39,6 @@ namespace Dungeon
             Console.Clear();
 
             return equippedWeapon;
-
         }
     }
 }
