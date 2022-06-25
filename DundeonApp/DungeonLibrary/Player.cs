@@ -6,7 +6,7 @@ namespace DungeonLibrary
     {
         public Race CharacterRace { get; set; }
         public Weapon EquippedWeapon { get; set; }
-        public static int Score { get; set; } 
+        public static int Score { get; set; } = 0;
         
         public override string ToString()
         {

@@ -31,8 +31,7 @@ namespace Dungeon
             Weapon equippedWeapon = _weaponAutoSelect.WeaponSelection();
             Player player = _playerAutoSelection.PlayerSelection(equippedWeapon);
 
-            bool exit = false;
-            Player.Score = 0;          
+            bool exit = false;          
             do
             {
                 _consoleUtilities.PrintChar(RoomCreation.GetRoom(), 10);
