@@ -29,7 +29,7 @@ namespace MonsterLibrary
             HitChance = 60;
             Block = 35;
             MinDamage = 10;
-            Description = "Tentacled Beast of Legand!!";
+            Description = "Tentacled Beast of Legend!!";
             InDeepWater = false;
         }
 
