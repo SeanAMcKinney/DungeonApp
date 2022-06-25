@@ -27,7 +27,7 @@ namespace DungeonLibrary
                     description = "Human Holy Knight";
                     break;
                 case Race.Centaur:
-                    description = "Fast Fighter Horse-man";
+                    description = "Fast Fighter - Horse-man";
                     break;
             }
 
